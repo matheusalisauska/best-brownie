@@ -11,7 +11,7 @@ export default async function SendPoints() {
 
     return (
         <main className='flex h-full min-h-screen flex-col gap-4 bg-[#f8f9fb] pt-4 relative'>
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-2'>
                 <div className='flex flex-col p-4'>
                     <h2 className='text-2xl font-bold text-[#1A1A1A]'>
                         Enviar pontos

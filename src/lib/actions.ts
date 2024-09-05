@@ -90,7 +90,7 @@ export const sendPointsAction = actionClient
             flattenValidationErrors(ve).fieldErrors,
     })
     .action(async ({ parsedInput: { userId, points } }) => {
-         await fetch(`${config.API_URL}/company-user/add-points/${config.COMPANY_ID}/${userId}`, {
+             const request = await fetch(`${config.API_URL}/company-user/add-points/${config.COMPANY_ID}/${userId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -98,6 +98,7 @@ export const sendPointsAction = actionClient
             },
             body: JSON.stringify({ points }),
         });
+        console.log(await request.json())
 
         //TODO: Error handling
 

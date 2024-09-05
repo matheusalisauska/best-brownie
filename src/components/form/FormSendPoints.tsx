@@ -11,6 +11,7 @@ import { SendPoints, SendPointsSchema } from '@/types/schema';
 import { useForm } from 'react-hook-form';
 import { sendPointsAction } from '@/lib/actions';
 import { Form, FormControl, FormField, FormItem } from '../ui/form';
+import Link from 'next/link';
 
 interface FormSendPointsProps {
     users: { label: string; value: string }[];
@@ -104,13 +105,23 @@ export const FormSendPoints = ({ users }: FormSendPointsProps) => {
                             </div>
                         </div>
                     )}
-                    <div className='absolute bottom-8 left-0 w-full px-8'>
-                        <Button
-                            variant={'outline'}
-                            className='h-fit w-full self-center border-none bg-[#605dec] px-6 py-2 text-sm font-bold text-white'
-                        >
-                            Enviar pontos
-                        </Button>
+                    <div className='absolute bottom-8 left-0 flex w-full flex-col gap-2 px-8'>
+                        {step === 2 && (
+                            <Button
+                                variant={'outline'}
+                                className='h-fit w-full self-center border-none bg-[#605dec] px-6 py-2 text-sm font-bold text-white hover:bg-[#4f4db4] hover:text-white focus:bg-[#4f4db4] focus:text-white'
+                            >
+                                Enviar pontos
+                            </Button>
+                        )}
+                        <Link href='/admin' className='w-full'>
+                            <Button
+                                variant={'outline'}
+                                className='w-full border-[#605dec] text-[#605dec]'
+                            >
+                                Voltar
+                            </Button>
+                        </Link>
                     </div>
                 </div>
             </form>
